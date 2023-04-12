@@ -8,10 +8,12 @@ We heavily use Google Maps in our projects, so I wanted to have a well maintaine
 ## Documentation
 Checkout [vue-map.netlify.app](https://vue-map.netlify.app) for a detailed documentation or [codesandbox for an example](https://codesandbox.io/s/vue-3-google-maps-ygpr4?file=/src/main.js)
 
+### Forked from [https://github.com/fawmi/vue-google-maps](https://github.com/fawmi/vue-google-maps) for using with own configuration and requirements (as it had stopped reviewing pull request)
+
 ## Installation
 You can install it using npm
 ```
-npm install -S @fawmi/vue-google-maps
+npm install google-maps-vue
 ```
 
 ## Basic usage
@@ -23,7 +25,7 @@ In your `main.js`
 
 ```js
 import { createApp } from 'vue'
-import  VueGoogleMaps from '@fawmi/vue-google-maps'
+import  VueGoogleMaps from 'google-maps-vue'
 
 const app = createApp(App);
 app.use(VueGoogleMaps, {
@@ -146,7 +148,7 @@ If you need to add heatmap layer to the Map, add visualization library in load c
 
 ```js
 import { createApp } from 'vue'
-import  VueGoogleMaps from '@fawmi/vue-google-maps'
+import  VueGoogleMaps from 'google-maps-vue'
 
 const app = createApp(App);
 app.use(VueGoogleMaps, {
@@ -245,7 +247,7 @@ First add `@fawmi/vue-google-maps` to `build.transpile` property in your `nuxt.c
  ```ts
 export default defineNuxtConfig({
   build: {
-    transpile: ['@fawmi/vue-google-maps']
+    transpile: ['google-maps-vue']
   },
 })
  ```
@@ -254,7 +256,7 @@ Then create a plugin `~/plugin/vueGoogleMaps.ts`.
 
 ```ts
 import { defineNuxtPlugin } from '#app'
-import  VueGoogleMaps from '@fawmi/vue-google-maps'
+import  VueGoogleMaps from 'google-maps-vue'
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(VueGoogleMaps, {
